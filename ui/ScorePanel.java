@@ -4,10 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-/**
- * صفحه‌ی جداگانه‌ی نمایش امتیازات: امتیاز آخرین بازی، پیام رکورد جدید (در صورت وجود)
- * و جدول بهترین امتیازهای ثبت‌شده.
- */
+
 public class ScorePanel extends JPanel {
 
     private final JLabel titleLabel = new JLabel("", SwingConstants.CENTER);
@@ -47,7 +44,6 @@ public class ScorePanel extends JPanel {
         highScoreList.setSelectionModel(new DefaultListSelectionModel() {
             @Override
             public void setSelectionInterval(int i0, int i1) {
-                // انتخاب آیتم‌های لیست غیرفعال است
             }
         });
 
@@ -78,7 +74,7 @@ public class ScorePanel extends JPanel {
     public void refresh(int lastScore, List<Integer> highScores, boolean isNewRecord) {
         titleLabel.setText("پایان بازی!");
         scoreLabel.setText("امتیاز شما: " + lastScore);
-        recordLabel.setText(isNewRecord ? "🏆 رکورد جدید!" : " ");
+        recordLabel.setText(isNewRecord ? " رکورد جدید!" : " ");
 
         listModel.clear();
         int rank = 1;
